@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple_Form</title>
+</head>
+<style>
+    .wufoo{
+        font-family:  "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+    }
+</style>
+<body>
+    <form method="post" action="Simple_Form.html" class="wufoo">
+        <h1>Order form</h1>
+        <h3>What would you like to buy?</h3><br>
+        <select name="grocery">
+            <option value="Meat">Meat</option>
+            <option value="Veg">Vegetable</option>
+            <option value="Egg">Egg</option>
+            <option value="Fish">Fish</option>
+        </select>
+        <h3>How many would you like to order?</h3><br>
+        <b><label><input name="option1" type="radio" value="1-$10">1-$10</label></b><br>
+        <b><label><input name="option2" type="radio" value="2-$20">2-$20</label></b><br>
+        <b><label><input name="option3" type="radio" value=""3-$25>3-$25</label></b><br>
+        <h3> <span> Name <span style="color: red;" >*</span></span> </h3>
+        <input type="text" name="firstName" placeholder="First Name" size="15">
+        <input type="text" name="lastName" placeholder="Last Name" size="15">
+        <h3>Email</h3>
+        <textarea name="email" cols="44" style="height: 18px"> </textarea>
+        <h3>Phone number</h3>
+        <input type="number" name="number1" style="width: 40px"/>-<input type="number" name="number2" style="width: 40px"/>-<input type="number" name="number3" style="width: 40px">
+        <br>
+        <br>
+        <input type="submit" value="Submit"/>
+    </form>
+
+</body>
+</html>
