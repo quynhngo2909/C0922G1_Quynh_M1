@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get">
+<table>
+    <tr>
+        <th style="width: 150px">Amount</th>
+        <th style="width: 120px">From Currency</th>
+        <th style="width: 120px">To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" style="width: 80px" id="amount">
+        </td>
+        <td>
+            <select name="fromCurrency" id="from">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select name="toCurrency" id="to">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" onclick="Exchange()">Convert</button>
+        </td>
+    </tr>
+</table>
+</form>
+<p id="Result">Result:</p>
+</body>
+</html>
