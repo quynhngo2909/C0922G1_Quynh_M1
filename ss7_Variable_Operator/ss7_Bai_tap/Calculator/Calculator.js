@@ -5,7 +5,7 @@ let num2=document.getElementById("num2").value;
 let value1 = parseInt(num1);
 let value2 = parseInt(num2);
 
-let result= value1 * value2;
+let result= value1 + value2;
 
 document.getElementById("Result").innerHTML= "The result is:"+ result;
 
@@ -40,8 +40,7 @@ function Devision(){
 
     let value1 = parseInt(num1);
     let value2 = parseInt(num2);
-
-    let result= value1 * value2;
+    let result= value1 / value2;
 
     document.getElementById("Result").innerHTML= "The result is:"+ result;
 
