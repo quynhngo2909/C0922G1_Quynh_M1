@@ -4,15 +4,18 @@ let from=document.getElementById("from").value;
 let to=document.getElementById("to").value;
 let Result;
 
-if( from == VND && to =="USD") {
-    Result= "Result:" + (amount* 23000) + "Đ";
+if ( from == "VND" && to == "USD" ){
+    Result = "The result is :" + (amount/23000) + "VND";
 }
-    else if( from == "USD" && to == "VND" ){
-        Result= "Result:" + (amount/23000) + "$";
+    else if ( from == "USD" && to == "VND"){
+    Result = "The result is :" + (amount*23000) + "VND";
 }
-    else if ( from == "VND"){
-        Result= "Result:" + amount + "VND";
-    else Result ="Result:"+ amount + "$";
+    else if ( from =="VND") {
+    "The result is :" + amount + "VND";
 }
-    document.getElementBy("Result").innerHTML=Result;
+    else {
+    "The result is :" + amount + "USD";
+}
+
+    document.getElementById("Result").innerHTML=Result;
 }
