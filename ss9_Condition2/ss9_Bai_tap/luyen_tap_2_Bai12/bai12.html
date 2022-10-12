@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Bài 10: Tính giá tiền điện</h1>
+Nhập nhóm đối tượng sử dụng:
+
+<select id="group" name="group">
+<option value="group1">Giá bán lẻ điện sinh hoạt</option>
+<option value="group2">Giá bán lẻ điện sinh hoạt dùng công tơ thẻ trả trước</option>
+</select>
+<br>
+Nhập số chữ điện kWh:
+<input id="chuDien" type="number" size="10">
+<br>
+<button type="submit" onclick="bai10()">Tính tiền điện</button>
+<p id='resultBai10'>Kết quả: </p>
+
+<h1>Bài 11: Tính thuế thu nhập cá nhân</h1>
+Thu nhập chịu thuế theo tháng (VND):
+<input id="income" size="20">
+<br>
+<button type="submit" onclick="bai11()">Tính số thuế TNCN</button>
+<p id='resultBai11'>Kết quả: </p>
+
+<h1>Bài 12: Tính lãi kép ngân hàng</h1>
+Số tiền vay (VND):
+<input id="money" size="20" type="number">
+<br>
+Số tháng cho vay:
+<input id="month" size="20" type="number">
+<br>
+Lãi xuất hàng tháng (%):
+<input id="interect" size="20" type="number">
+<br>
+<button type="submit" onclick="bai12()">Tính lãi</button>
+<p id='resultBai12'>Kết quả: </p>
+
+</body>
+<script src="Ltap_ctruc_dkien_2_Bai10_11_12.js"></script>
+</html>

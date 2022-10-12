@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h4>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100.
+    Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</h4>
+<button onclick="bai1()" >Click to run</button>
+
+<h4>Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.<br>
+Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ.<br>
+    Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.</h4>
+<button onclick="bai2()" >Click to run</button>
+
+<h4>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h4>
+<button onclick="bai3()" >Click to run</button>
+<p> Dãy Fibonacci: </p><div id="fibo"></div>
+
+<h4>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h4>
+<button onclick="bai5()" >Click to run</button>
+<p> Tổng 20 số đầu tiên trong dãy Fibonacci: </p><div id="total"></div>
+
+</body>
+<script>
+    function bai1() {
+        let i = 0; N = 100; count = 0; text = "";
+        for (i = 0; i < N; i++) {
+            // console.log(i);
+            count++;
+            text = i
+            // console.log(count);
+        }
+        // console.log(i);
+       alert("Đã hoàn thành. Số: "+ text);
+    }
+    function bai2() {
+        let temp = +prompt("Nhập nhiệt độ hiên tại: (C)");
+        if (temp > 100) {
+            while (temp > 100) {
+                alert("Mời giảm nhiệt độ");
+                temp = +prompt("Nhập nhiệt độ hiên tại: (C)");
+            }
+        }
+        if (temp < 20) {
+            while (temp < 20) {
+                alert("Mời tăng nhiệt độ");
+                temp = +prompt("Nhập nhiệt độ hiên tại: (C)");
+            }
+        }
+        if ( temp >= 20 && temp <= 100) {
+            alert("Nhiệt độ nhập vào trong khoảng 20 ~ 100 C:" + temp);
+        }
+    }
+    function bai3() {
+        let  i = 1; j = 1; numberFibo = 0 ;count = 2; text = "1 1";
+        for (count = 2; count <= 20; count++) {
+            numberFibo = i + j;
+            i = j;
+            j = numberFibo;
+            text += " " + numberFibo;
+        }
+        document.getElementById("fibo").innerHTML = text;
+    }
+    function bai5() {
+        let i = 1; j = 1; count = 2; numberFibo = 0; total = 2;
+        for (count = 2; count <= 20; count++) {
+            numberFibo = i +j;
+            i = j;
+            j = numberFibo;
+            total += numberFibo;
+        }
+        document.getElementById('total').innerHTML = total;
+    }
+</script>
+</html>

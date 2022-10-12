@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Hai mươi số nguyên tố đầu tiên:</p>
+</body>
+<script>
+    let count = 1;
+    N = 2;
+    i = 2;
+    text = "";
+        for (N = 2; N < 1000; N++) {
+            if (count === 21) {
+                break;
+            }
+            for (i = 2; i <= N; i++) {
+                if (i === N) {
+                    text += " Số nguyên số thứ " + count + ": "  + N + "<br>";
+                    count++;
+                } else if (N % i == 0) {
+                    break;
+                }
+            }
+        }
+
+    document.write(text);
+</script>
+</html>

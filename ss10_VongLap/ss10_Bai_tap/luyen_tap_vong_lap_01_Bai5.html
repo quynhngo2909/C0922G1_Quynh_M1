@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h4>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h4>
+<button onclick="bai5()" >Click to run</button>
+<p> Tổng 20 số đầu tiên trong dãy Fibonacci: </p><div id="total"></div>
+
+</body>
+<script>
+    function bai5() {
+        let i = 1; j = 1; count = 2; numberFibo = 0; total = 2;
+        for (count = 2; count <= 20; count++) {
+            numberFibo = i +j;
+            i = j;
+            j = numberFibo;
+            total += numberFibo;
+        }
+        document.getElementById('total').innerHTML = total;
+    }
+</script>
+</html>
