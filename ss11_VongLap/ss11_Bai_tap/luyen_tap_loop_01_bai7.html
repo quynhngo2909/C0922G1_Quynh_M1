@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h4>Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. <br>
+    Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. <br>
+    Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</h4>
+<button onclick="bai7()">Bấm check</button>
+<br>
+Kết quả:
+<div id="resultBai7"></div>
+
+
+</body>
+<script>
+    function bai7() {
+        let i = 0;
+        N = 100;
+        j = 1;
+        text = "";
+        isDivisible3 = j % 3;
+        isDivisible5 = j % 5;
+        for (i = 0; i < N; i++) {
+            if (isDivisible3 === 0 && isDivisible5 === 0) {
+                text += "FizzBuzz" + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            } else if (isDivisible3 === 0) {
+                text += "Fizz" + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            } else if (isDivisible5 === 0) {
+                text += "Buzz" + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            } else {
+                text += j + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            }
+        }
+        document.getElementById('resultBai7').innerHTML = text;
+    }
+
+</script>
+
+
+</html>

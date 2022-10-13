@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button onclick="play()">Chơi</button>
+
+</body>
+<script>
+    function play() {
+        let i = 0;
+        N = 3;
+        guess = null;
+        let range = +prompt("Nhập số lớn nhất trong khoảng bạn muốn đoán");
+        let random = Math.floor(Math.random() * (range));
+        console.log(random);
+        guess = +prompt("Nhập số bạn muốn đoán");
+        for (; i < N; i++) {
+            if (guess === random) {
+                alert("Bạn đã đoán trúng số.Chúc mừng bạn");
+                break;
+            }
+            if (guess < random) {
+                alert("Số bạn đoán nhỏ hơn.");
+            } else if (guess > random) {
+                alert("Số bạn đoán lớn hơn.");
+            }
+            guess = +prompt("Nhập lại số bạn muốn đoán");
+        }
+        if (i === 3) {alert("Hết lượt chơi");
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h4>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h4>
+<button onclick="bai6()">Bấm vào để tìm tổng</button>
+<br>
+Kết quả:
+<div id="tongBai6"></div>
+
+</body>
+<script>
+
+
+    function bai6() {
+        let i = 1;
+        countDiv7 = 0;
+        isDivisible7 = i % 7;
+        sum = 0;
+        while (countDiv7 < 30) {
+            if (isDivisible7 === 0) {
+                countDiv7 += 1;
+                sum += i;
+            }
+            i++;
+            isDivisible7 = i % 7;
+        }
+        document.getElementById('tongBai6').innerHTML = sum;
+    }
+
+
+</script>
+
+
+</html>

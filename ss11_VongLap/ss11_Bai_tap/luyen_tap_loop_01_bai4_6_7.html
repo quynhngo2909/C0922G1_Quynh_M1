@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h4>
+<button onclick="bai4()">Bấm vào để tìm số</button>
+<br>
+Kết quả:
+<div id="result"></div>
+
+<h4>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h4>
+<button onclick="bai6()">Bấm vào để tìm tổng</button>
+<br>
+Kết quả:
+<div id="tongBai6"></div>
+
+<h4>Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. <br>
+    Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. <br>
+    Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</h4>
+<button onclick="bai7()">Bấm check</button>
+<br>
+Kết quả:
+<div id="resultBai7"></div>
+
+
+</body>
+<script>
+    function bai4() {
+        let i = 1;
+        j = 1;
+        count = 2;
+        numberFibo = 2;
+        countDiv5 = 0;
+        isDivisible5 = numberFibo % 5;
+        while (countDiv5 < 1) {
+            numberFibo = i + j;
+            i = j;
+            j = numberFibo;
+            isDivisible5 = numberFibo % 5;
+            if (isDivisible5 === 0) {
+                countDiv5 += 1;
+            }
+        }
+        document.getElementById('result').innerHTML = numberFibo;
+    }
+
+    function bai6() {
+        let i = 1;
+        countDiv7 = 0;
+        isDivisible7 = i % 7;
+        sum = 0;
+        while (countDiv7 < 30) {
+            if (isDivisible7 === 0) {
+                countDiv7 += 1;
+                sum += i;
+            }
+            i++;
+            isDivisible7 = i % 7;
+        }
+        document.getElementById('tongBai6').innerHTML = sum;
+    }
+
+    function bai7() {
+        let i = 0;
+        N = 100;
+        j = 1;
+        text = "";
+        isDivisible3 = j % 3;
+        isDivisible5 = j % 5;
+        for (i = 0; i < N; i++) {
+            if (isDivisible3 === 0 && isDivisible5 === 0) {
+                text += "FizzBuzz" + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            } else if (isDivisible3 === 0) {
+                text += "Fizz" + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            } else if (isDivisible5 === 0) {
+                text += "Buzz" + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            } else {
+                text += j + "<br>";
+                j++;
+                isDivisible3 = j % 3;
+                isDivisible5 = j % 5;
+            }
+        }
+        document.getElementById('resultBai7').innerHTML = text;
+    }
+
+</script>
+
+
+</html>
