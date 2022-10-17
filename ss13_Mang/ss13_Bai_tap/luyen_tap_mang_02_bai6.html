@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 6: Viết chương trình nhập vào một mảng ký tự,
+    tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ ) </h4>
+
+<p>Nhập mảng ký tự:<br>
+<input id='arr'  size="20">
+    <br>
+    <br>
+</p>
+
+<p>Thay thế (-) bằng (_)
+    <br>
+    <br>
+    <button onclick ="checkAndReplace()">Bấm vào để thực hiện</button>
+</p>
+<div id='result'></div>
+</body>
+<script>
+    function checkAndReplace() {
+        let string = document.getElementById('arr').value;
+        let arr = string.split("");
+        console.log(arr);
+        let result = null;
+        for (let i=0; i < arr.length; i++) {
+            if (arr[i] == "-") {
+                arr[i] = "_";
+            }
+       }
+        console.log(result);
+        document.getElementById('result').innerHTML = arr.join("");
+    }
+</script>
+</html>

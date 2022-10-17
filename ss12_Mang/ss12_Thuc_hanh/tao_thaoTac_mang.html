@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>[Thực hành] Tạo và thao tác với mảng</h4>
+
+<input id='inputText' size='20'>
+<button value='Add' onclick='addElementToArray()'>Add</button>
+<button value='Display' onclick='displayArray()'>Display</button>
+<p id="show"></p>
+<!--<input type="button" value="Add">-->
+<!--Đối với button:
+    +Dùng <buton>xxx</button>: cần nhâp xxx để hiển thị tên button trong HTML; nhập value trong thẻ button sẽ ko hiển thị tên button
+    +Dùng <input type='button' value='xxx'>: cần nhập giá trị xxx/value ->hiện thị tên button trong HTML
+    -->
+</body>
+<script>
+    let i = 0; array = Array(); display="<hr>";
+    function addElementToArray() {
+        array[i] = document.getElementById('inputText').value;
+        alert("Element " + array[i] + " add to index " + i );
+        i++;
+        document.getElementById('inputText').value ="";
+    }
+    function displayArray() {
+        for (i=0; i < array.length; i++) {
+            display += "Element " + i + " is " + array[i] + '<br>';
+        }
+        document.getElementById('show').innerHTML=display;
+    }
+
+</script>
+</html>

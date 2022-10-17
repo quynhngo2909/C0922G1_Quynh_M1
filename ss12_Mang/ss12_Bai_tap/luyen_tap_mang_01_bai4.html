@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên
+    và đảo ngược các phần tử trong mảng đó.</h4>
+<p>Các số ban đầu:
+<div id="banDau"></div>
+</p>
+<button onclick="change()">Bấm để đảo ngược các phần tử</button>
+<p id="result"></p>
+</body>
+<script>
+    let n = 10;
+    count = 0
+    let a = +prompt("Mời nhập số nguyên:");
+    arr = [];
+    for (let i = 0, count =0; count < n; i++) {
+        if (Number.isInteger(a)) {
+            arr[count] = a;
+            count++;
+            a = +prompt("Mời nhập số nguyên tiếp theo:");
+        } else {
+            alert('Số nhập vào không phải là số nguyên');
+            a = +prompt("Mời nhập lại số nguyên:");
+        }
+    }
+    document.getElementById('banDau').innerHTML = arr.join(" ");
+    console.log(arr);
+    function change() {
+        let arr2=arr.reverse();
+        document.getElementById('result').innerHTML = ' "'+ arr2.join (" ")+ ' " ';
+    }
+</script>
+</html>

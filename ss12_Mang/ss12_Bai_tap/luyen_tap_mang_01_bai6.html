@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    Chương trình tìm xem V có nằm trong mảng số nguyên không?
+    Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array"</h4>
+<p>Các số ban đầu: <br>
+<div id="arr"></div>
+</p>
+<p>Các số cần kiểm tra:<input id="V" type="number" size="10"><br>
+</p>
+<button onclick="findV()">Bấm vào để kiểm tra</button>
+<div id="numV"></div>
+</body>
+<script>
+   let  n = 5;
+    arr = Array();
+    indexV = null;
+
+    result = "V is not in the array";
+    for (let count = 0; count < n; ) {
+        let a = +prompt("Mời nhập số");
+        if (Number.isInteger(a)) {
+            arr[count] = a;
+            count++;
+        } else {
+            a = +alert("Số vừa nhập không phải số nguyên. Mời nhập lại số nguyên:")
+        }
+    }
+    console.log(arr);
+    document.getElementById('arr').innerHTML = arr.join("," + " ");
+
+    function findV() {
+        let V = +document.getElementById('V').value;
+        i = 0;
+        alert(V);
+        while (i < arr.length) {
+            if (arr[i] === V) {
+                result = "V is in the array";
+                indexV = i;
+                break;
+            }
+            i++;
+        }
+        document.getElementById('numV').innerHTML = result + ". V ở index " + indexV + " trong dãy số";
+    }
+
+</script>
+</html>

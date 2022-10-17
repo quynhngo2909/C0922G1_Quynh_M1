@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+    Ví dụ, nếu một mảng chứa các ký tự [ 'c', 's', 'c', '2', '6', '1' ]
+    sau khi thực hiện đảo ngược sẽ là "162csc"
+</h4>
+
+<p>Mảng đảo ngược:
+<div id="reverseArr"></div>
+</p>
+
+</body>
+<script>
+    // let a = ['c', 's', 'c', '2', '6', '1'];
+    //
+    // arr = [];
+    // for (let i = a.length - 1, j = 0; i > -1; i--, j++) {
+    //     arr[j] = a[i];
+    // }
+    // document.getElementById('reverseArr').innerHTML = arr.join("");
+    // console.log(arr);
+
+    let a = [
+        ['c', 's', 'c', '2', '6', '1'],
+        ['a', 'b', 'c', '1', '2', '3']
+    ]
+    arr = [[],[]];
+    for (let i = 0; i < a.length; i++) {
+        for (let k = a[i].length -1, j = 0; k >-1; j++, k--) {
+            arr[i][j]=a[i][k];
+        }
+    }
+    // arr=a.reverse()
+    // for (let i = 0; i < a.length; i++) {
+    //     arr[i] = a[i].reverse();
+    // }
+    //
+    document.getElementById('reverseArr').innerHTML = arr.join("");
+
+</script>
+</html>

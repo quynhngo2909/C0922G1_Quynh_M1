@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau.
+    Ví dụ có mảng chuỗi như sau: myColor = ["Red", "Green", "White", "Black"]</h4>
+<p id="return"></p>
+
+
+<h4>Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2 số chẵn.
+    Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8</h4>
+<p id="chenDau"></p>
+
+<h4>Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.
+    Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.</h4>
+Nhập chuỗi ký tự:
+<input id="string" size="10">
+<button onclick="changeString()">Click to run</button>
+<p id="result">Kết quả:</p>
+</body>
+<script>
+    // Bài 1
+    let myColor = ['Red', 'White', 'Blue', 'Yellow'];
+    let text = myColor.toString() + '<br>'; //Cách 1
+    document.getElementById('return').innerHTML = text;
+
+    text += myColor.join() + '<br>'; //Cách 2
+    document.getElementById('return').innerHTML = text;
+
+    text += myColor.join(' and '); //Cách 2
+    document.getElementById('return').innerHTML = text;
+    // Bài 2
+    let num = (prompt('Nhập một số vào'));
+    num = num.toString();
+    // console.log(typeof num);
+    // alert(num.slice(0, 1));
+    for (let i = 0; i < num.length - 1; i++) {
+        if (+num.charAt(i) % 2 == 0 && +num.charAt(i + 1) % 2 == 0) {
+            let str1 = num.slice(0, i + 1); // slice(n,m): tao chuỗi mới từ vị trị n tới (m-1)
+            str2 = num.slice(i + 1, num.length);
+            num = str1 + "-" + str2;
+        }
+    }
+    document.getElementById('chenDau').innerHTML = num;
+
+    // Bài 3
+function changeString() {
+    let string = document.getElementById('string').value;
+    let arr = string.split('');
+    console.log(string[0]);
+    console.log(arr);
+    console.log(arr[3]);
+    for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == arr[i].toUpperCase()){
+        arr[i] = arr[i].toLowerCase();
+    } else if (arr[0] == arr[0].toLowerCase()){
+        arr[i] = arr[i].toUpperCase();
+    }
+    }
+      string = arr.join('');
+    document.getElementById('result').innerHTML = string;
+    // console.log(string[0] == string[0].toUpperCase())
+    // console.log(string.charAt(0) == string.charAt(0).toUpperCase());
+    // console.log(arr[0]);
+}
+</script>
+</html>

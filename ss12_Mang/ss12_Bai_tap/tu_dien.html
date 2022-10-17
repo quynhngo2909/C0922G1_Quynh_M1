@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>[Bài tập] Từ điển</h4>
+Nhập từ cần tra cứu từ tiếng Anh qua tiếng Việt:
+<input type="text" id='text' size="20">
+<button onclick="dich()">Tra cứu</button>
+<p id="result">Kết quả:</p>
+
+</body>
+<script>
+    function dich(){
+    let english = ['apple', 'banana', 'grape', 'pineapple', 'waterlemon']
+    let vietnamese = ['táo', 'chuối', 'nho', 'thơm','dưa hấu'];
+    let search =  document.getElementById('text').value.trim();
+    console.log('value');
+    let n = english.indexOf(search,0);
+    document.getElementById('result').innerHTML = "Từ " + search + " nghĩa là: " + vietnamese[n];
+    }
+</script>
+</html>

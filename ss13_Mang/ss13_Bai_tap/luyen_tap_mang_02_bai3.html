@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+    Chương trình này đếm số ký tự số trong mảng.
+</h4>
+
+<p>Mảng ký tự:<br>
+    <label>Số dòng (từ 1 đến 5): <input id='arrRow' type="number" size="2"></label>
+    <br>
+    <label>Số cột: <input id='arrCol' type="number" size="2"></label>
+    <br>
+    <br>
+
+<div id="arr"></div>
+</p>
+<p>Ký tự số trong mảng:
+    <br>
+    <br>
+    <button onclick ="arrCreate()">Bấm vào để nhập mảng ký tự và kiếm tra ký tự số</button>
+</p>
+
+<div id="numCharacters"></div>
+</body>
+<script>
+    // let n = +document.getElementById('arrRow').value;
+    // let m = +document.getElementById('arrCol').value;
+    // let arr =[[],[],[],[],[]];
+    function arrCreate() {
+        let n = +document.getElementById('arrRow').value;
+        let m = +document.getElementById('arrCol').value;
+        let arr =[[],[],[],[],[]];
+        // let arr= Array ([], []);
+        //Số dòng của mảng: theo số dòng khai báo trong mảng
+        // console.log(arr)
+        // console.log(n);
+        // console.log(m);
+        for (let i = 0; i < n; i++) {
+            alert("Mời nhập phần tử hàng " + i);
+            for (let j = 0; j <m; j++) {
+                arr[i][j] = prompt("Mời nhập phần tử hàng " + i + " cột " + j);
+            }
+        }
+        document.getElementById('arr').innerHTML = arr.join(' ');
+      let string = arr.toString(); count = 0; text ="";
+            for (i =0; i<string.length; i++) {
+                if (!isNaN(string[i])) {
+                    count++;
+                    text += string[i] + " ";
+                }
+            }
+       document.getElementById('numCharacters').innerHTML
+           = " Số ký tự số: " + count + " ký tự " + "<br>" + text;
+    }
+</script>
+</html>

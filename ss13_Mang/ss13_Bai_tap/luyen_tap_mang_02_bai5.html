@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 5: Viết một chương trình nhập vào 2 chuỗi,
+    sau đó kiểm tra xem hai chuỗi có giống nhau hay không.</h4>
+
+<p>Nhập chuỗi thứ nhất:<br>
+<input id='string1'  size="10">
+    <br>
+    <br>
+</p>
+<p>Nhập chuỗi thứ hai:<br>
+    <input id='string2'  size="10">
+    <br>
+    <br>
+</p>
+<p>Kiểm tra:
+    <br>
+    <br>
+    <button onclick ="checkIdenticalString()">Bấm vào để so sánh chuỗi</button>
+</p>
+<div id='result'></div>
+</body>
+<script>
+    function checkIdenticalString() {
+        let string1 = document.getElementById('string1').value;
+        let string2 = document.getElementById('string2').value;
+        let result = null;
+        // console.log(typeof string1);
+        // console.log(typeof string2);
+        if (string1.length>string2.length) {
+            n=string1.length;
+        } else {
+            n=string2.length;
+        }
+        // console.log(n);
+        // console.log(typeof n);
+        // console.log(string1[0] != string2[0]);
+        for (let i=0; i < n; i++) {
+            if (string1[i] == string2[i]) {
+                if ( i ==n-1) {
+                    result = "Hai chuỗi giống nhau."
+                    break;
+                }
+            } else {
+                result = "Hai chuỗi không giống nhau."
+                break;
+            }
+       }
+        console.log(result);
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>
