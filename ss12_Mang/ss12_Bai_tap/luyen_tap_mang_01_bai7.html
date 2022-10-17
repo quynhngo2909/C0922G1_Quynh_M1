@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng
+    (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)</h4>
+    <p>Các số ban đầu: <br>
+<div id="arr"></div>
+</p>
+<p>Các số cần kiểm tra:<input id="V" type="number" size="10"><br>
+</p>
+<button onclick="findV()">Bấm vào để kiểm tra</button>
+<div id="numV"></div>
+<br>Mảng sau khi kiểm tra:<div id="result"></div>
+</body>
+<script>
+   let  n = 10;
+    arr = Array();
+    indexV = "";
+
+    result = "V is not in the array";
+    for (let count = 0; count < n; ) {
+        let a = +prompt("Mời nhập số");
+        if (Number.isInteger(a)) {
+            arr[count] = a;
+            count++;
+        } else {
+            a = +alert("Số vừa nhập không phải số nguyên. Mời nhập lại số nguyên:")
+        }
+    }
+    console.log(arr);
+    document.getElementById('arr').innerHTML = arr.join("," + " ");
+
+    function findV() {
+        let V = +document.getElementById('V').value;
+        i = 0;
+        while (i < arr.length) {
+            if (arr[i] == V) {
+                result = "V is in the array";
+                // indexV += "V ở index " + i + "<br>";
+                arr.splice(i,1);
+                i -= 1;
+            }
+            i++;
+        }
+        console.log(arr);
+        document.getElementById('numV').innerHTML = result ;
+        document.getElementById('result').innerHTML = arr.join("," + " ");
+
+    }
+
+</script>
+</html>
