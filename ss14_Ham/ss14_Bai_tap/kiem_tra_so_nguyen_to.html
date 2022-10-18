@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function isPrime(number) {
+        let result = "";
+        let i = 2;
+        if (number <= 1) {
+            result = number + " is not prime.";
+        } else {
+            for (i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    result = number + " is not prime.";
+                    break;
+                }
+            }
+            if (i > Math.sqrt(number)) {
+                result = number + " is a prime.";
+                // console.log(i);
+                // console.log(i > Math.sqrt(number));
+            }
+
+        }
+        return result;
+    }
+    let a = prompt("Mời nhập số cần kiểm tra là số nguyên:")
+    let result = isPrime(a);
+    alert(result);
+</script>
+</html>

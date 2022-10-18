@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h4>
+<!--Cach1-->
+<p>So can tinh binh phuong:
+    <span><input type="number" id="inputNumber" oninput="square(this.value)"></span>
+    Ket qua binh phuong:
+    <span id="result"></span></p>
+<!--Cach2-->
+<p>So can tinh binh phuong:
+    <span><input type="number" id="inputNumber2" oninput="square2()"></span>
+    Ket qua binh phuong:
+    <span id="result2"></span></p>
+</body>
+<script>
+    // Cach1
+function square(a) {
+    a = +a;
+    let result = Math.pow(a,2);
+    document.getElementById('result').innerHTML = result;
+    console.log(result);
+}
+// Cach1:
+    function square2() {
+        let a = +document.getElementById('inputNumber2').value;
+        let result = Math.pow(a,2);
+        document.getElementById('result2').innerHTML = result;
+        console.log(result);
+    }
+</script>
+
+</html>

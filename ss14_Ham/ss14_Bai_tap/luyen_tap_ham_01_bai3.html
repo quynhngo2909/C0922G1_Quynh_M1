@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai,
+    hiển thị hộp thoại thông báo cho người dùng.
+    Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</h4>
+<p>Nhap tham so thu 1: <input type="number" id="inputA"></p>
+<p>Nhap tham so thu 2: <input type="number" id="inputB"></p>
+<button onclick="calculation()"> So sanh cac tham so</button>
+<br>
+<p id="result">Ket qua:</p>
+</body>
+<script>
+    // Cach 1
+    // function conpareParameter() {
+    //     let a = +document.getElementById('inputA').value;
+    //     let b = +document.getElementById('inputB').value;
+    //     if (a > b) {
+    //         alert("Tham so thu 1 lon hon tham so thu hai: " + a + " > " + b);
+    //     } else {
+    //         let result = a + b;
+    //         return result;
+    //     }
+    // }
+    // function calculation() {
+    //     let result = conpareParameter();
+    //     document.getElementById('result').innerHTML = result;
+    // }
+    // Cach 2
+    function calculation() {
+        let a = +document.getElementById('inputA').value;
+        let b = +document.getElementById('inputB').value;
+        if (a > b) {
+            alert("Tham so thu 1 lon hon tham so thu hai: " + a + " > " + b);
+        } else {
+            let result = a + b;
+            document.getElementById('result').innerHTML = result;
+        }
+    }
+</script>
+</html>

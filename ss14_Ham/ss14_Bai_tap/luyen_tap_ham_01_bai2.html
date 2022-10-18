@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.
+    Gọi hàm từ trong phần body của trang web và hiển thị kết quả lên màn hình.</h4>
+<p>Nhap so can tinh: <input type="number" id="input"></p>
+<button onclick="calculate()"> Goi ham</button>
+<br>
+<p id="result">Ket qua:</p>
+</body>
+<script>
+    function calculate() {
+        let i = +document.getElementById('input').value;
+        let result = i + 1;
+        document.getElementById('result').innerHTML = "Ket qua: " + result;
+        // console.log(typeof i);
+        // console.log(i);
+        // console.log(result);
+    }
+</script>
+</html>

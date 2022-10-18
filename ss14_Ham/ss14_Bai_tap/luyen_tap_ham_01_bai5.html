@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 5: Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau:
+    Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus.
+    Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị là tên các chòm sao tương ứng chứa các ngôi sao:
+    Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major và Leo.
+    Tiếp theo, tạo một hàm nhận vào một tham số dạng chuỗi duy nhất.
+    Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao.
+    Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai.
+    Nói cách khác, trả lại tên chòm sao của ngôi sao đó.
+    Trong phần body của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao,
+    sau đó gọi hàm với thông tin đầu vào. Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào.
+    Cho kết quả hiển thị trên màn hình.</h4>
+<p>Ket qua tim kiem:<span id="result"></span></p>
+
+</body>
+<script>
+let arr1 =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+let arr2 =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+function checkConstellation() {
+let star = prompt("Mời nhập tên ngôi sao cần tìm chòm sao:");
+    // console.log(star);
+    // console.log(star.length);
+    star = (star.toString()).trim();
+    // console.log(star);
+    // console.log(star.length);
+    let i = 0; index = -1; result = "";
+    for (i = 0; i < arr1.length; i++) {
+        if (star == arr1[i]) {
+            index = i;
+            break;
+        }
+    }
+    if (index == -1) {
+        result = "Ngoi sao " + star + " Khong thuoc 1 trong cac chom sao da cho.";
+    } else {
+        result = "Ngoi sao " + star + " thuoc chom sao: " + arr2[index];
+    }
+    document.getElementById('result').innerHTML = result;
+    console.log(result);
+}
+checkConstellation();
+</script>
+
+</html>
