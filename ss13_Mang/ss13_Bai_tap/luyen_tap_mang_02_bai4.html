@@ -8,30 +8,32 @@
 <h4>Bài 4: Viết một chương trình để đếm số từ trong một chuỗi</h4>
 
 <p>Nhập chuỗi ký tự:<br>
-<input id='string'  size="10">
+    <input id='string' size="10">
     <br>
     <br>
 </p>
 <p>Số từ trong chuỗi:
     <br>
     <br>
-    <button onclick ="countWord()">Bấm vào để đếm số từ trong chuỗi</button>
+    <button onclick="countWord()">Bấm vào để đếm số từ trong chuỗi</button>
 </p>
 <div id="numWords"></div>
 </body>
 <script>
-    // let str = prompt("Nhập vào 1 chuỗi");
-    // console.log(typeof str);
-    // console.log(str);
-    // Đọc lệnh từ trên xuống, cần khai kháo giá trị trước hoặc để lệnh đọc giá trị trong khối block
-    function countWord () {
+
+    function countWord() {
         let str = document.getElementById('string').value;
         let arr = str.split(" ");
-        for (let i = 0; i < arr.length; i++){
+        for (let i = 0; i < arr.length; i++) {
             if (!isNaN(arr[i])) {
                 arr.splice(i,1);
+                i--;
             }
         }
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].replace(/\s+/g,"");
+        }
+
         let count = arr.length;
         document.getElementById('numWords').innerHTML = "Số từ trong chuỗi: " + count;
         console.log(arr);
