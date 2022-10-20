@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</h4>
+
+<p> Các so can so sanh:</p>
+<span>So thu nhat: <input id="number1" type="number"></span><br>
+<span>So thu hai: <input id="number2" type="number"></span><br>
+<span>So thu ba: <input id="number3" type="number"></span><br>
+
+<br>
+<button onclick="findMin()">Tim so nho nhat</button>
+<br>
+<span id="result"></span>
+
+</body>
+<script>
+    function findMin() {
+       let a = parseFloat(document.getElementById('number1').value);
+        let b = parseFloat(document.getElementById('number2').value);
+        let c = parseFloat(document.getElementById('number3').value);
+        let min;
+        if (a > b && a > c) {
+            min = a;
+        } else if (b > c) {
+            min = b;
+        } else {
+            min = c;
+        }
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        document.getElementById('result').innerHTML = min;
+    }
+
+findMin();
+
+</script>
+
+</html>

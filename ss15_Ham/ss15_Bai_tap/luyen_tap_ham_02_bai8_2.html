@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</h4>
+
+<p>Nhap mang so nguyen:</p>
+<!--<span id="arrInteger"></span>-->
+<input type="number" id="arrHidden">
+<!--<br>-->
+<!--<button onclick="inputArr()">Bam vao de nhap</button>-->
+
+<br>
+<button onclick="swapArr()">Dao nguoc mang</button>
+<br>
+<span id="result">Kết quả:</span>
+
+</body>
+<script>
+    // function inputArr() {
+    //     let arr = []; a = null; n = 5;
+    //     for (let i = 0; i < n; i++) {
+    //         a = +prompt("Nhap so nguyen");
+    //         if (Number.isInteger(a)) {
+    //             arr[i] = a;
+    //         } else {
+    //             alert("Khong phai so nguyen.")
+    //             i--;
+    //         }
+    //     }
+    //     console.log(arr);
+    //     document.getElementById('arrInteger').innerText = arr;
+    //     document.getElementById('arrHidden').value = arr;
+    //     console.log(typeof arrInteger);
+    // }
+    function swapArr() {
+        let string = document.getElementById('arrHidden').value; temp = null;
+        console.log(string);
+        console.log(typeof string);
+        // let arr=JSON.parse("[" + string + "]");
+        let arr = string.split("");
+        console.log(arr);
+        console.log(typeof arr);
+        for (let i =0; i< arr.length/2; i++) {
+            temp = arr[arr.length -1 -i];
+            arr[arr.length -1 -i] = arr[i];
+            arr[i] = temp;
+        }
+        document.getElementById('result').innerHTML = "Ket qua: " + arr;
+    }
+
+</script>
+
+</html>

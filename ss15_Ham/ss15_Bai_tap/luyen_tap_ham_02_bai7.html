@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h4>
+
+<p> Các so can doi cho:</p>
+So thu nhat: <input id="number1" type="number">
+So thu hai: <input id="number2" type="number">
+<br>
+<button onclick="swap()">Đổi chỗ</button>
+<br>
+<span id="result">Kết quả:</span>
+
+</body>
+<script>
+    function swap() {
+        a = +document.getElementById('number1').value;
+        b =+document.getElementById('number2').value;
+        let temp = a;
+        a = b;
+        b = temp;
+        document.getElementById('result').innerHTML = "a = " + a + '<br>' + "b = " + b;
+    }
+
+findMin();
+
+</script>
+
+</html>

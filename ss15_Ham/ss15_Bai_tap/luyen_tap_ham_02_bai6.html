@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+    Nếu là nguyên dương trả về true, ngược lại trả về false.</h4>
+
+<p> Các so can kiem tra</p>
+<input id="number" type="number" oninput="checkIsPositiveInterger(this.value)">
+<br>
+<span id="result">Kết quả:</span>
+
+</body>
+<script>
+    function checkIsPositiveInterger(a) {
+        a = +a;
+        let result = null;
+        if ((Number.isInteger(a)) && a > 0) {
+            result = "true";
+        } else {
+            result = "false"
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+
+findMin();
+
+</script>
+
+</html>

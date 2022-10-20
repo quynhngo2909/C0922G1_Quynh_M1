@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h4>
+
+<p>So nguyen can tinh giai thua:
+    <span id="input"></span>
+    Ket qua:
+    <br>
+    <span id="result"></span></p>
+
+</body>
+<script>
+    function calculateFactorial() {
+        let a =null;
+       do { a = +prompt("Moi nhap so nguyen:");
+        } while (!Number.isInteger(a));
+       document.getElementById('input').innerHTML = a;
+        console.log(Number.isInteger(a));
+        let result = 1;
+        for (let i = a; i > 1; i--) {
+            result *= i;
+        }
+        document.getElementById('result').innerHTML= result;
+    }
+calculateFactorial();
+</script>
+
+</html>
