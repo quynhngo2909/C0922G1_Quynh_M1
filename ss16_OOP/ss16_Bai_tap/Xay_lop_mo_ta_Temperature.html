@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Temperature {
+        constructor (celsius) {
+            this.celsius = celsius;
+            if (this.celsius < -273) {
+                alert ("Min là -273. Moi nhap lai do C");
+            }
+        }
+        converCelsiusToFahrenheit () {
+            if (this.celsius < -273) {
+                alert("Moi nhap lai do C truoc khi chuyen doi C qua F");
+            } else {
+                return "Voi do C " + this.celsius + " , do F tuong ung: F = " + (1.8 * this.celsius + 32);
+            }
+        }
+        convertCelsiusToKelvin () {
+            if (this.celsius < -273) {
+                alert("Moi nhap lai do C truoc khi chuyen doi qua K");
+            } else {
+                return "Voi do C " + this.celsius + " , do K tuong ung: K = " + (this.celsius + 273.15);
+            }
+        }
+    }
+    let temperature1 = new Temperature(25);
+    console.log (temperature1);
+    console.log(typeof temperature1.celsius);
+    alert(temperature1.converCelsiusToFahrenheit());
+    alert(temperature1.convertCelsiusToKelvin());
+</script>
+</html>

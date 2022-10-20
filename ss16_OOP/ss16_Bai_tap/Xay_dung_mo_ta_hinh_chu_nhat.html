@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Xây dựng lớp mô tả hình chữ nhật</h4>
+<canvas id="rectangleCanvas" height="500px" width="800px" style="border: 1px solid sienna"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor (height, width) {
+            this.height = height;
+            this.width = width;
+        }
+        getArea () {
+            return "S = " + this.height * this.width;
+        }
+        getPerimeter () {
+            return "P = " + 2 * (this.height + this.width);
+        }
+        createRectangle(x,y){
+            let ctx = document.getElementById("rectangleCanvas");
+            ctx = ctx.getContext('2d');
+            ctx.beginPath();
+            ctx.rect(x,y,this.height, this.width);
+            ctx.stroke();
+        }
+        setWidth (x) {
+            this.width = x;
+        }
+        setHeight (y) {
+            this.height = y;
+        }
+    }
+    let rectangle1 = new Rectangle(200,400);
+    rectangle1.createRectangle(100,100);
+        rectangle1.height = +prompt("Nhap chieu dai moi");
+        rectangle1.width = + prompt(("Nhap chieu rong moi"))
+    rectangle1.createRectangle(300,200);
+</script>
+</html>
