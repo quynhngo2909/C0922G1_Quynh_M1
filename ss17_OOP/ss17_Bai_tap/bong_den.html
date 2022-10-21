@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="ballCat"></p>
+
+</body>
+<script>
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+            console.log(this.status);
+        }
+
+        turnOff() {
+            this.status = false;
+            console.log("Lamp is off");
+        }
+
+        turnOn() {
+            this.status = true;
+            console.log("Lamp is on");
+        }
+    }
+
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+
+        switchOff(lamp) {
+            this.status = false;
+            this.lamp.turnOff();
+        }
+
+        switchOn(lamp) {
+            this.status = true;
+            this.lamp.turnOn();
+        }
+        connectToLamp(lamp){
+            this.lamp = lamp;
+        }
+    }
+
+    let electricLamp = new ElectricLamp(true);
+    let button = new SwitchButton(true, electricLamp);
+    button.connectToLamp(electricLamp);
+    for (i =0; i<10; i++) {
+        button.switchOff();
+        button.switchOn();
+    }
+
+</script>
+</html>
