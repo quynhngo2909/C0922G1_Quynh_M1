@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="ballCat"></p>
+
+</body>
+<script>
+    class ObjectMove {
+        constructor(img, top, left, sizeHeight, sizeWidth) {
+           this.img = img;
+            this.top = top;
+            this.left = left;
+            this.sizeHeight = sizeHeight;
+            this.sizeWidth = sizeWidth;
+        }
+        getObj() {
+            return "<img src=\"di_chuyen_doi_tuong.jpg\" height=\" " + this.sizeHeight +
+                "\" width=\" " + this.sizeWidth +
+                "\" style=\"top: " + this.top + "px; left: " + this.left + "px; position: absolute\" />";
+        }
+        moveRight(a) {
+            this.left += a;
+            console.log("Move to right: " + a );
+        }
+        moveLeft(a) {
+            this.left -= a;
+            console.log("Move to left: " + a);
+        }
+        moveDown(a) {
+            this.top += a;
+            console.log("Move down: " + a);
+        }
+        moveUp(a) {
+            this.top -= a;
+            console.log("Move up: " + a);
+        }
+    }
+
+    let ballCat = new ObjectMove('di_chuyen_doi_tuong.jpg', 200, 200, 224, 224);
+    function start (){
+            if (ballCat.top < window.innerHeight - ballCat.sizeHeight) {
+                ballCat.moveDown(50);
+                document.getElementById('ballCat').innerHTML = ballCat.getObj();
+            } else if (ballCat.left < window.innerWidth - ballCat.sizeWidth) {
+                ballCat.moveRight(100);
+                document.getElementById('ballCat').innerHTML = ballCat.getObj();
+            }
+        setTimeout(start, 100);
+        }
+    start();
+</script>
+    </html>

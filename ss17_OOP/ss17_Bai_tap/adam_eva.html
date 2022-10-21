@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="ballCat"></p>
+
+</body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight= weight;
+        }
+        getweight() {
+            return this.weight;
+        }
+        isEmpty() {
+           if (this.weight <=0) {
+               return true;
+           } else {
+               return false;
+           }
+        }
+        decrease() {
+            if (this.weight <= 0) {
+                console.log("Het tao roi");
+            } else {
+                this.weight--;
+            }
+        }
+    }
+class Person {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        getName() {
+            console.log(this.name);
+            return this.name;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        getGender() {
+            return this.gender;
+        }
+        checkApple(apple) {
+            if (apple.isEmpty()) {
+                console.log("Het tao roi");
+                return apple.isEmpty();
+            } else {
+                console.log("Con tao.Co the an");
+                return apple.isEmpty();
+            }
+        }
+        eatApple(apple) {
+            if (apple.isEmpty()) {
+                console.log("Het tao de an roi ");
+            } else {
+                this.weight++;
+                apple.decrease();
+                console.log(this.name + " an tao. Can nang " + this.weight);
+                console.log("Tao nang " + apple.weight);
+            }
+
+        }
+}
+    let apple = new Apple(5);
+    let adam = new Person('Adam', 'male', 75);
+    let eva = new Person('Eva', 'female', 55);
+for (;apple.weight > 0 ;) {
+        adam.getName();
+        adam.checkApple(apple);
+        eva.getName();
+        eva.eatApple(apple);
+        eva.checkApple(apple);
+        adam.getName();
+        adam.eatApple(apple);
+    }
+</script>
+    </html>
