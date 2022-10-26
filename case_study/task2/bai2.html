@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm.
+    Ký tự là bất kỳ được nhập từ bàn phím.
+    Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'</h4>
+<p>Kiểm tra ngyên âm, phụ âm</p>
+<input id="inputChar">
+<button onclick="check()">Kiểm tra</button>
+</body>
+<script>
+    let arVowels = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E']
+    function check() {
+        let result = null;
+        let char = document.getElementById('inputChar').value;
+        let specialchar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        console.log(char);
+        for (let i = 0; i < arVowels.length; i++) {
+            if (char == arVowels[i]) {
+                result = "Ký tự " + char + " là nguyên âm";
+                break;
+            } else if (!isNaN(char)) {
+                result = "Ký tự " + char + " là ký tự số";
+                break;
+            } else if (specialchar.test(char)) {
+                result = "Ký tự " + char + " là ký tự đặc biệt";
+                break;
+            }
+        }
+        if (result == null) {
+            result = "Ký tự " + char + " là phụ âm";
+    }
+        alert(result);
+    }
+</script>
+</html>

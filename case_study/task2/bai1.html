@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 1: Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập
+    và lương ròng (số tiền lương thực sự mà nhân viên đó nhận được).<br>
+    20% thuế thu nhập nếu lương là 15 triệu.<br>
+    10% thuế thu nhập nếu lương từ 7 đến 15 triệu.<br>
+    5% thuế thu nhập nếu lương dưới 7 triệu<br>
+
+</h4>
+<p>Lương nhân viên (VND):</p> <input type="number" id="salary"></p>
+<br>
+<button onclick="calculateTaxAndNetSalary()">Tính thuế thu nhập và lương ròng</button>
+<p id="result"></p>
+</body>
+<script>
+    function calculateTaxAndNetSalary() {
+        let salary = +document.getElementById('salary').value;
+        let tax = 0;
+        let netSalary = 0;
+        let result = null;
+        if (salary < 7000000) {
+            tax = 5;
+            netSalary = (salary*(1-tax/100)).toFixed(0);
+        } else if (salary <= 15000000) {
+                tax = 10;
+                netSalary = (salary*(1-tax/100)).toFixed(0);
+        } else if (salary > 15000000) {
+            tax = 20;
+            netSalary = (salary*(1-tax/100)).toFixed(0);
+        }
+        result = "Với lương là " + salary + "<br>" +
+                "Thuế thu nhập: " + tax + "%. " +  "<br>" +
+                "Lương ròng: " + netSalary;
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>
