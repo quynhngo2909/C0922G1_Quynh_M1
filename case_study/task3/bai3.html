@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 3: Cho một danh sách các phân số, hãy tìm chỉ số của phân số lớn nhất (đếm từ 0)
+    Giả định rằng không có các phân số bằng nhau trong tập đầu vào
+</h4>
+<p>Mảng tử số: <span id="numerators"></span></p>
+<p> Mảng mẫu số <span id="denominators"></span></p>
+<p>Phân số lớn nhất và chỉ số tương ứng: <span id="result"></span></p>
+</body>
+<script>
+    let n = prompt("Nhập số phân số cần kiểm tra");
+    let a= inputNumerators(n);
+    console.log(a);
+    let b = inputDenominators(n);
+    console.log(b);
+    getFraction(a,b);
+    function inputNumerators(n) {
+        let numerators = [];
+        let a = null;
+        for (let i = 1; i <= n; i++) {
+           a = prompt("Nhập tử số thứ " + i );
+           while (isNaN(a)) {
+               alert("Phải nhập ỏ dạng số");
+               a = prompt("Nhập lại tử số thứ " + i );
+           }
+           numerators[i-1] = a;
+        }
+        document.getElementById('numerators').innerHTML = numerators;
+        return numerators;
+    }
+    function inputDenominators(n) {
+        let denominators = [];
+        let a = null;
+        for (let i = 1; i <= n; i++) {
+            a = prompt("Nhập mẫu số thứ " + i );
+            while (isNaN(a) || a == 0) {
+                alert("Phải nhập ở dạng số và khác 0");
+                a = prompt("Nhập lại mẫu số thứ " + i );
+            }
+            denominators[i-1] = a;
+        }
+        document.getElementById('denominators').innerHTML = denominators;
+        return denominators;
+    }
+    function getFraction (numerators,denominators) {
+        let fraction = [];
+        for (let i = 0; i < denominators.length; i++) {
+            fraction[i] = numerators[i]/denominators[i];
+        }
+        let max = fraction[0];
+        let k =0;
+        for (let i = 0; i <fraction.length ; i++) {
+            if (max < fraction[i]) {
+                max = fraction[i];
+                k  = i;
+            }
+        }
+        document.getElementById('result').innerHTML =
+            " Phân số lớn nhất: " + numerators[k] + "/" + denominators[k] +
+            "<br>" + "Chỉ số: " + k;
+    }
+</script>
+</html>

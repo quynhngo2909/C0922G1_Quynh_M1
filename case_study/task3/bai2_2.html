@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 2: Cho 2 mảng A và B chứa số nguyên.
+    Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+    Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện</h4>
+<p>Mảng A:
+    <br>
+    <span id="arA"></span>
+</p>
+<p>Mảng B
+    <br>
+    <span id="arB"></span>
+</p>
+<p id="missValue"></p>
+</body>
+<script>
+    let a = [];
+    let b = [];
+    let x = null;
+    let n = null;
+    let m = null;
+    let c = [];
+    let count = 0;
+    let countInC = 0;
+    inputarA(n);
+    inputarB(m);
+    missValue(a,b);
+    function inputarA(n) {
+        while (!Number.isInteger(n)) {
+            alert("Độ dài mảng cần là số nguyên.");
+            n = +prompt("Nhập lại độ dài mảng A");
+        }
+        for (let i = 0; i < n; i++) {
+            x = +prompt("Nhập phần tử " + i + " mảng A");
+            while (!Number.isInteger(x)) {
+                alert("Phần từ nhập vào mảng phải là số nguyên.");
+                x = +prompt("Nhập lại phần tử " + i + " mảng A");
+            }
+            a[i] = x;
+        }
+        document.getElementById('arA').innerHTML = "Mảng A: " + a;
+    }
+    function inputarB(m) {
+        while (!Number.isInteger(m)) {
+            alert("Độ dài mảng cần là số nguyên.");
+            m = +prompt("Nhập lại độ dài mảng B");
+        }
+        for (let i = 0; i < m; i++) {
+            x = +prompt("Nhập phần tử " + i + " mảng B");
+            while (!Number.isInteger(x)) {
+                alert("Phần từ nhập vào mảng phải là số nguyên.");
+                x = +prompt("Nhập lại phần tử " + i + " mảng B");
+            }
+            b[i] = x;
+        }
+        document.getElementById('arB').innerHTML = "Mảng B: " + b;
+    }
+
+    function missValue(a,b) {
+        for (let i = 0; i < b.length; i++) {
+            count = 0;
+            for (let j = 0; j < a.length; j++) {
+                if (b[i] === a[j]) {
+                    count++;
+                    break;
+                }
+            }
+            for (let k = 0; k < c.length; k++){
+                    if (b[i] == c[k]) {
+                        countInC++;
+                    }
+                }
+            if (count == 0 && countInC == 0) {
+                 c.push(b[i]);
+            }
+         }
+        document.getElementById('missValue').innerHTML = "Có " + c.length + " phần tử xuất hiện trong B không xuất hiện trong A. " +"<br>" + c;
+    }
+</script>
+</html>
