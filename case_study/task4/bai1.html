@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 1: Viết một hàm chuẩn hóa xâu ký tự:
+    biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau
+    và bắt đầu mỗi từ phải in hoa.
+    Ví dụ tRuong TaN HAI => Truong Tan Hai.
+    Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
+    in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+</h4>
+<p>Nhập chuỗi ban đầu: <input id="inputStr"></p>
+<button onclick="standardize()">Chuẩn hóa chuỗi</button>
+<p>Chuỗi sau chuẩn hóa :<br> <span id="resultString"></span></p>
+<p>Từ dài nhất trong chuỗi ban đầu:<br> <span id="resultWord"></span></p>
+</body>
+<script>
+    // let maxLengthWord = maxLength();
+
+    function standardize() {
+        let arr = document.getElementById('inputStr').value;
+        arr = arr.trim().split(" ");
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].replace(/\s+/g, '');
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === '') {
+                arr.splice(i, 1);
+                i--;
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            newArr.push(arr[i].charAt(0).toUpperCase());
+            for (let j = 1; j < arr[i].length; j++) {
+                newArr.push(arr[i].charAt(j).toLowerCase());
+                console.log(arr[i].length);
+            }
+            newArr.push(' ');
+        }
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (max.length < arr[i].length) {
+                max = arr[i];
+            }
+            console.log(arr[i].length);
+            console.log(arr);
+        }
+            document.getElementById('resultString').innerHTML = newArr.join('');
+            document.getElementById('resultWord').innerHTML = max;
+    }
+
+</script>
+</html>

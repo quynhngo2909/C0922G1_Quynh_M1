@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+    Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.
+    ⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.
+</h4>
+</body>
+<script>
+    let s1 = prompt('Mời nhập chuỗi ký tự thứ nhất:');
+    let s2 = prompt('Mời nhập chuỗi ký tự thứ hai:');
+    commonCharacterCount(s1, s2);
+    function commonCharacterCount(s1, s2) {
+        let arr1 = s1.split('');
+        let arr2 = s2.split('');
+        let differentArr = [];
+        let count1 = 0;
+        let count2 = 0;
+        let max = null;
+        let totalSameCharactor = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            count1 = 0;
+            count2 = 0;
+            for (let j = 0; j < arr1.length; j++) {
+                if (arr1[i] === arr1[j]) {
+                    count1 += 1;
+                    console.log(count1);
+                }
+            }
+            for (let k = 0; k < arr2.length; k++) {
+                if (arr1[i] === arr2[k]) {
+                    count2 +=1;
+                    console.log(count2);
+                }
+            }
+            if (count1 < count2) {
+                max = count1;
+                console.log(max);
+            } else {
+                max = count2;
+            }
+            if (count2 > 0 && differentArr.length === 0) {
+                differentArr.push(arr1[i]);
+                differentArr.push(max);
+            } else if (count2 > 0 && differentArr.length > 0 && differentArr.indexOf(arr1[i]) === -1) {
+                differentArr.push(arr1[i]);
+                differentArr.push(max);
+            }
+        }
+        for (let i = 1; i < differentArr.length; i+=2) {
+            totalSameCharactor += differentArr[i];
+        }
+        let text ="";
+        for (let i = 0; i < differentArr.length; i+=2) {
+            text += "Có " + differentArr[i+1] + " ký tự " + differentArr[i] + ". ";
+        }
+        document.write("Chuỗi s1 và chuỗi s2 có " + totalSameCharactor + " ký tự chung." + "<br>" + text)
+    }
+
+</script>
+</html>
