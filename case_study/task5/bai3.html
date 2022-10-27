@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều.</h4>
+
+</body>
+<script>
+    let m = +prompt("Mời nhập số hàng của mảng");
+    while (!Number.isInteger(m) || m < 0) {
+        alert("Số hàng của mảng phải là số nguyên dương");
+        m = +prompt("Mời nhập lại số hàng của mảng");
+    }
+    let n = +prompt("Mời nhập số cột của mảng");
+    while (!Number.isInteger(n) || n < 0) {
+        alert("Số cột của mảng phải là số nguyên dương");
+        n = +prompt("Mời nhập lại số cột của mảng");
+    }
+    let arr = [];
+    for (let i = 0; i < m; i++) {
+        arr[i] = [];
+        for (let j = 0; j < n; j++) {
+            arr[i][j] = +prompt("Mời nhập phần tử [" + i + "][" + j + "] của mảng");
+        }
+    }
+    findMinMax(arr);
+
+    function findMinMax(arr) {
+        let min = arr[0][0];
+        let max = arr[0][0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (min > arr[i][j]) {
+                    min = arr[i][j];
+                }
+                if (max < arr[i][j]) {
+                    max = arr[i][j];
+                }
+            }
+        }
+        console.log("Max:  " + max + ". Min " + min);
+    }
+</script>
+</html>
