@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h. Ví dụ: h = 5</h4>
+</body>
+<script>
+    let drawRightAngleTriangle = "";
+    let h = +prompt("Mời nhập chiều cao tam giác");
+    while (!Number.isInteger(h) || h < 0) {
+        alert("Chiều cao phải là số nguyên dương");
+        h = +prompt("Mời nhập lại chiều cao tam giác");
+    }
+    for (let i = 0; i < h - 1; i++) {
+        drawRightAngleTriangle += '*';
+        for (let j = 0; j < i - 1; j++) {
+            drawRightAngleTriangle += '&nbsp' + '&nbsp';
+        }
+        if (i > 0) {
+            drawRightAngleTriangle += '*';
+        }
+        drawRightAngleTriangle += '<br>'
+    }
+    for (let i = 0; i < h - 1; i++) {
+        drawRightAngleTriangle += '*' + '&nbsp';
+    }
+    document.write(drawRightAngleTriangle);
+</script>
+</html>

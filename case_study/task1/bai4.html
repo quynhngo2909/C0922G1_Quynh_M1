@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 4: Vẽ tam giác cân rỗng có chiều cao h. Ví dụ: h = 5</h4>
+</body>
+<script>
+    let drawRightAngleTriangle = "";
+    let h = +prompt("Mời nhập chiều cao tam giác");
+    while (!Number.isInteger(h) || h < 0 || h % 2 === 0) {
+        alert("Chiều cao phải là số nguyên dương lẽ");
+        h = +prompt("Mời nhập lại chiều cao tam giác");
+    }
+    for (let i = 0; i < h -1; i++) {
+        for (let j = 0; j < (2 * h - 1 - (2 * i + 1)) / 2; j++) {
+            drawRightAngleTriangle += '&nbsp' + '&nbsp' + '&nbsp' + '&nbsp';
+        }
+        if (i === 0) {
+            drawRightAngleTriangle += '&nbsp' + '*' + '&nbsp';
+        } else {
+            drawRightAngleTriangle += '&nbsp' + '*' + '&nbsp';
+            for (let j = 0; j < (2 * i - 1); j++) {
+                drawRightAngleTriangle += '&nbsp' + '&nbsp' + '&nbsp' + '&nbsp';
+            }
+            drawRightAngleTriangle += '&nbsp' + '*' + '&nbsp';
+        }
+        for (let j = 0; j < (2 * h - 1 - (2 * i + 1)) / 2; j++) {
+            drawRightAngleTriangle += '&nbsp' + '&nbsp' + '&nbsp' + '&nbsp';
+        }
+        drawRightAngleTriangle += '<br>' + '<br>';
+    }
+    for (let j = 0; j < 2 * h - 1; j++) {
+        drawRightAngleTriangle += '&nbsp' + '*' + '&nbsp';
+    }
+    document.write(drawRightAngleTriangle);
+
+</script>
+</html>

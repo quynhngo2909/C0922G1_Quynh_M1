@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây.</h4>
+</body>
+<script>
+    let drawRectangle = "";
+    let n = +prompt("Mời nhập chiều dài hình chữ nhật");
+    while (!Number.isInteger(n) || n < 0) {
+        alert("Chiều dài phải là số nguyên dương");
+        n = +prompt("Mời nhập lại chiều dài hình chữ nhật");
+    }
+    let m = +prompt("Mời nhập chiều rộng hình chữ nhật");
+    while (!Number.isInteger(m) || m < 0) {
+        alert("Chiều rộng phải là số nguyên dương");
+        m = +prompt("Mời nhập lại chiều rộng hình chữ nhật");
+    }
+    for (let j = 0; j < m; j++) {
+        drawRectangle += '*' + '&nbsp';
+    }
+    drawRectangle += '<br>' + '<br>' ;
+    for (let i = 0; i < n - 2; i++) {
+            drawRectangle += '*' + '&nbsp';
+        for (let j = 1; j < m-1; j++) {
+            drawRectangle += '&nbsp' + '&nbsp' + '&nbsp';
+        }
+        drawRectangle += '*' + '&nbsp';
+        drawRectangle += '<br>'+ '<br>';
+    }
+    for (let j = 0; j < m; j++) {
+        drawRectangle += '*' + '&nbsp';
+    }
+    document.write(drawRectangle);
+</script>
+</html>
