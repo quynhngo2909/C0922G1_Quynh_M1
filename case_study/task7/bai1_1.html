@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .title {
+            background-color: grey;
+            height: 60px;
+            text-align: center;
+        }
+        .heading {
+            height: 60px;
+            text-align: center;
+        }
+        .body {
+            height: 400px;
+            text-align: center;
+        }
+        .footer {
+            background-color: grey;
+            height: 30px;
+            text-align: center;
+        }
+        [class*="col-"] {
+            float: left;
+        }
+        .heading::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .body::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+<div class="title"><h2>A Web Page</h2></div>
+<div class="heading">
+    <div class="col-4"><h1>G</h1></div>
+    <div class="col-8"><h1>Hệ thống quản lý bài tập Casestudy Module 1</h1></div>
+</div>
+<hr>
+<div class="body">
+    <div class="col-4" style="background-color: deepskyblue" >
+        <br><br><br>
+        <select name="test1" >
+            <option value="Bai 1">Bai tap 1</option>
+            <option value="Bai 2">Bai tap 2</option>
+            <option value="Bai 3">Bai tap 3</option>
+            <option value="Bai 4">Bai tap 4</option>
+            <option value="Bai 5">Bai tap 5</option>
+        </select>
+        <br><br><br><br>
+        <select name="test2">
+            <option value="Bai 1">Bai tap 1</option>
+            <option value="Bai 2">Bai tap 2</option>
+            <option value="Bai 3">Bai tap 3</option>
+            <option value="Bai 4">Bai tap 4</option>
+            <option value="Bai 5">Bai tap 5</option>
+        </select>
+        <br><br><br>
+        <select name="test2">
+            <option value="Bai 1">Bai tap 1</option>
+            <option value="Bai 2">Bai tap 2</option>
+            <option value="Bai 3">Bai tap 3</option>
+            <option value="Bai 4">Bai tap 4</option>
+            <option value="Bai 5">Bai tap 5</option>
+        </select>
+        <br><br><br><br>
+        <select name="test2">
+            <option value="Bai 1">Bai tap 1</option>
+            <option value="Bai 2">Bai tap 2</option>
+            <option value="Bai 3">Bai tap 3</option>
+            <option value="Bai 4">Bai tap 4</option>
+            <option value="Bai 5">Bai tap 5</option>
+        </select>
+        <br><br><br><br>
+        <select name="test2">
+            <option value="Bai 1">Bai tap 1</option>
+            <option value="Bai 2">Bai tap 2</option>
+            <option value="Bai 3">Bai tap 3</option>
+            <option value="Bai 4">Bai tap 4</option>
+            <option value="Bai 5">Bai tap 5</option>
+        </select>
+        <br><br><br><br>
+    </div>
+    <div class="col-8"></div>
+</div>
+<div class="footer"></div>
+</body>
+</html>
