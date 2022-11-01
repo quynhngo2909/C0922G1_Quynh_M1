@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let n = +prompt("Mời nhập độ dài mảng. Độ dài mảng là số nguyên dương");
+    while (!Number.isInteger(n) || n < 1) {
+        alert("Độ dài mảng phải là số nguyên dương");
+        n = +prompt("Mời nhập lại độ dài mảng");
+    }
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Mời nhập phần tử " + i + " trong mảng");
+        while (!Number.isInteger(a)) {
+            alert("Phần tử mảng phải là số nguyên");
+            a = +prompt("Mời nhập lại");
+        }
+        arr[i] = a;
+    }
+    document.write("Mảng đã nhập: " + arr.join(" , ") + "<br>");
+    //    1. Tính trung bình cộng các số lẻ ở vị trí chẵn
+    let avg = 0;
+    let countOdd = 0;
+    for (let i = 0; i < arr.length; i = i + 2) {
+        if (arr[i] % 2 !== 0) {
+            avg += arr[i];
+            countOdd++;
+        }
+    }
+    if (countOdd === 0) {
+        alert("Không có số lẽ nào ở vị trí chẵn");
+    } else {
+        avg = avg / countOdd;
+    }
+    document.write("Trung bình cộng các số lẻ ở vị trí chẵn: " + avg + "<br>");
+    // 2. Tìm số lớn nhất trong mảng vừa nhập
+    let max = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    document.write("Số lớn nhất: " + max + "<br>");
+    // 3. Tìm vị trí các số nhỏ nhất trong mảng
+    let min = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (min > arr[i]) {
+            min = arr[i];
+        }
+    }
+    let minIndex = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === min) {
+            minIndex.push(i);
+        }
+    }
+    document.write("Vị trí các số nhỏ nhất trong mảng: " + minIndex.join(" , ") + "<br>");
+    // 4. Đếm các số chính phương có trong mảng
+    let countSquareNumber = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (Number.isInteger(Math.sqrt(arr[i])) && arr[i] > 0) {
+            countSquareNumber++;
+        }
+    }
+    document.write("Số lượng số chính phương trong mảng: " + countSquareNumber + "<br>");
+    // 5. Hiện thị các số nguyên tố có trong mảng lên màn hình
+    let prime = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (isPrime(arr[i])) {
+            prime.push(arr[i]);
+        }
+    }
+    document.write("Các số nguyên tố trong mảng: " + prime.join(" , ") + "<br>");
+
+    function isPrime(a) {
+        let count = 1;
+        let flag = false;
+        for (let i = 2; i <= a; i++) {
+            if (a % i === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    // 6. Thay thế các phần tử âm có trong mảng bằng giá trị 0
+    let arrReplaceNegative = []
+    for (let i = 0; i < arr.length; i++) {
+        arrReplaceNegative[i] = arr[i];
+    }
+    for (let i = 0; i < arrReplaceNegative.length; i++) {
+        if (arrReplaceNegative[i] < 0) {
+            arrReplaceNegative[i] = 0;
+        }
+    }
+    document.write("Mảng sau thay thế phần tử âm bằng số 0: " + arrReplaceNegative.join(" , ") + "<br>");
+    // 7. Xóa các phần tử âm có trong mảng
+    let arrDeleteNegative = []
+    for (let i = 0; i < arr.length; i++) {
+        arrDeleteNegative[i] = arr[i];
+    }
+    for (let i = 0; i < arrDeleteNegative.length; i++) {
+        if (arrDeleteNegative[i] < 0) {
+            arrDeleteNegative.splice(i,1);
+            i--;
+        }
+    }
+    document.write("Mảng sau khi xóa phần tử âm: " + arrDeleteNegative.join(" , ") + "<br>");
+    // 8. Sắp xếp mảng đã nhập theo thứ tự tăng dần
+    arr.sort();
+    document.write("Mảng xếp tăng dần: " + arr.join(" , ") + "<br>");
+</script>
+</html>

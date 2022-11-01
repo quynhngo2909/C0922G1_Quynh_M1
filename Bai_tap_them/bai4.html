@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let n = +prompt("Mời nhập độ dài mảng. Độ dài mảng là số nguyên dương");
+    while (!Number.isInteger(n) || n < 1) {
+        alert("Độ dài mảng phải là số nguyên dương");
+        n = +prompt("Mời nhập lại độ dài mảng");
+    }
+    let arr = [];
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Mời nhập phần tử " + i + " trong mảng");
+        while (!Number.isInteger(a)) {
+            alert("Phần tử mảng phải là số nguyên");
+            a = +prompt("Mời nhập lại");
+        }
+        arr[i] = a;
+    }
+    document.write("Mảng đã nhập: " + arr.join(" , ") + "<br>");
+    let splitPoint = +((arr.length -1)/2).toFixed(0);
+    for (let i = 0; i <= splitPoint; i++) {
+        arr1[i] = arr[i];
+    }
+    for (let j = 0, i = (splitPoint +1); i < arr.length; j++, i++) {
+        arr2[j] = arr[i];
+    }
+    console.log(arr2);
+    document.write("Hai mảng sau tách: " + "<br>" + "Mảng thứ nhất: "+ arr1.join(" , ") + "<br>" + "Mảng thứ hau: "+ arr2.join(" , ") + "<br>");
+</script>
+</html>
