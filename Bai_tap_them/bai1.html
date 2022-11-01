@@ -115,7 +115,9 @@
     }
     document.write("Mảng sau khi xóa phần tử âm: " + arrDeleteNegative.join(" , ") + "<br>");
     // 8. Sắp xếp mảng đã nhập theo thứ tự tăng dần
-    arr.sort();
+    arr.sort(function (a,b) {
+        return a-b;
+    });
     document.write("Mảng xếp tăng dần: " + arr.join(" , ") + "<br>");
 </script>
 </html>
